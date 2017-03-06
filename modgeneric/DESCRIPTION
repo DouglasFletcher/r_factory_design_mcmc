@@ -5,5 +5,5 @@ Date: 2017-03-03
 Author: Douglas Fletcher
 Description: Generic modelling framework for different model types.
 License: GPL-3
-Depends: R (>= 3.2.2), dataprocess, car, lmtest, R2WinBUGS, grid, gridExtra, ggplot2, reshape2
+Depends: R (>= 3.3.0), car, lmtest, R2WinBUGS, BRugs, grid, gridExtra, ggplot2, reshape2
 RoxygenNote: 5.0.1

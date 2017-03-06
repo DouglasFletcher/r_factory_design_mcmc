@@ -7,8 +7,7 @@
 modGenCompare(modelRun1, modelRun2)
 }
 \arguments{
-\item{modelRun2}{version: 0.3
-example:
+\item{modelRun2}{example:
 modGenCompare(modelRunLinear, modelRunBayes)}
 }
 \description{

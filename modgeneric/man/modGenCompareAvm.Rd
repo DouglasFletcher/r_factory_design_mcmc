@@ -8,7 +8,6 @@ modGenCompareAvm(modelRun1, modelRun2, dateVar1, dateVar2, dy = FALSE)
 }
 \arguments{
 \item{dy}{= T or F
-version: 0.3
 example:
 modGenCompareAvm(modelRunLinear, modelRunBayes, "period", "period", dy=TRUE)
 modGenCompareAvm(modelRunLinear, modelRunBayes, "period", "period")}

@@ -1,4 +1,5 @@
 
+
 RegressionFactory <- setRefClass("RegressionFactory"
 	# ==================================================
 	# == Class: RegressionFactory

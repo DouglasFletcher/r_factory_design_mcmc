@@ -1,4 +1,5 @@
 
+
 source(paste0(getwd(),"/modgeneric/R", "/init-RegressionBase.R"))
 
 # ============================
@@ -6,13 +7,14 @@ source(paste0(getwd(),"/modgeneric/R", "/init-RegressionBase.R"))
 # == Class: Bayes Modelling
 # == Purpose: run bayes model
 # == Dependencies: R2WinBugs
-# == , BRugs, foreign
+# == , BRugs
 # == Parent: RegressionBase
 # ============================
 
 options(scipen=99999)
 
-library(R2OpenBUGS)
+library(R2WinBUGS)
+library(BRugs)
 
 BayesLm <- setRefClass("BayesLm"
 	# ===================
@@ -217,7 +219,7 @@ BayesLm <- setRefClass("BayesLm"
 				eval(initsVal)
 			}
 			# run model
-			bugsOut = R2OpenBUGS::bugs(
+			bugsOut = R2WinBUGS::bugs(
 				  data = .self$windata
 				, inits = .self$inits
 				, parameters.to.save = .self$params
@@ -228,8 +230,8 @@ BayesLm <- setRefClass("BayesLm"
 				, n.iter = as.numeric(.self$modelParams[["bayesParams"]]["ni"])
 				, debug = as.logical(.self$modelParams[["bugsParams"]]["debug"])
 				, DIC = as.logical(.self$modelParams[["bugsParams"]]["DIC"])
-				#, bugs.directory = toString(.self$modelParams[["bugsParams"]]["bugs.directory"])
-				#, program = toString(.self$modelParams[["bugsParams"]]["program"])
+				, bugs.directory = toString(.self$modelParams[["bugsParams"]]["bugs.directory"])
+				, program = toString(.self$modelParams[["bugsParams"]]["program"])
 				, working.directory = toString(.self$bugsFunction)
 			)
 

@@ -1,15 +1,20 @@
 
 # == testcase
-#library(modgeneric)
-#.libPaths(Sys.getenv("R_LIBS_USER"))
+.libPaths(Sys.getenv("R_LIBS_USER"))
 
 # local
 wd <- getwd() 
 packageLoc <- paste0(wd, "/modgeneric/R/")
 
-# manual for updating and testing
-report <- list.files(packageLoc, full.names=TRUE, pattern = ".R$")
-for(rs in report){source(rs)}
+# source modgeneric package
+if ("modgeneric" %in% try(library("modgeneric"), silent=T)){
+	print("sourcing modgeneric as package")
+	library("modgeneric")
+} else {
+	print("sourcing modgeneric as functions")
+	report <- list.files(packageLoc, full.names=TRUE, pattern = ".R$")
+	for(rs in report){source(rs)}
+}
 
 # ============
 # data example
@@ -56,11 +61,10 @@ modelOutBayes <- modGenCreate(modelType = modelTypeBayes, modelSet = modelSetBay
 # run model
 modelRunBayes <- modGenRun(modelOutBayes)
 
-
 # =====================================
 # specific implementations for LinearLM
 # =====================================
-'
+
 varsIndepLinear <- list(
 	  list(vars = "tfr")
 	, list(vars = "partic")
@@ -103,4 +107,3 @@ modGenCompare(modelRunLinear, modelRunBayes)
 
 # compare model avms
 modGenCompareAvm(modelRunLinear, modelRunBayes, "year", "year" , dy=TRUE)
-'

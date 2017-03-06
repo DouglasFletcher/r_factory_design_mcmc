@@ -7,8 +7,7 @@
 modGenPlotAvm(modelRun, dateVar, dy = FALSE)
 }
 \arguments{
-\item{dy}{version: 0.3
-example:
+\item{dy}{example:
 modGenPlotAvm(modelRunLinear, "period")
 modGenPlotAvm(modelRunBayes, "period")}
 }

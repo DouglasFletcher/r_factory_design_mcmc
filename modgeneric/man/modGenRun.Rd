@@ -10,7 +10,6 @@ modGenRun(modelObject)
 list
 example: 
 modGenRun(modelObject=modelObject)
-version 0.3
 }
 \description{
 run model object: creates output run on model object

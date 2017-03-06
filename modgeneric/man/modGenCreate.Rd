@@ -9,7 +9,6 @@ modGenCreate(modelType = "", modelSet = data.frame(),
 }
 \value{
 list
-version 0.3
 example: modGenCreate(modeType=modeType, modelSet=modelSet, modelParams=modelParams, modelVars=modelVars)
 }
 \description{

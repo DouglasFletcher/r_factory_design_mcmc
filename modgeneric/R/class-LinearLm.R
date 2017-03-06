@@ -1,6 +1,6 @@
 
-source(paste0(getwd(),"/modgeneric/R", "/init-RegressionBase.R"))
 
+source(paste0(getwd(),"/modgeneric/R", "/init-RegressionBase.R"))
 options(scipen=99999)
 
 # =============================
@@ -13,6 +13,7 @@ options(scipen=99999)
 
 library(car)
 library(lmtest)
+
 
 LinearLm <- setRefClass("LinearLm"
 	# ===============================================
